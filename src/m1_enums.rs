@@ -26,6 +26,38 @@ fn check_under_five(num_check: u8) -> GivenResult<String, String> {
     }
 }
 
+fn check_under_five_built_in(num_check: u8) -> Result<String, String> {
+    if num_check < 5 {
+        Ok(String::from("Under five"))
+    } else {
+        Err(String::from("Over five"))
+    }
+}
+
+fn remainder_zero(num_check: f32) -> GivenOption<f32> {
+    let remainder: f32 = num_check % 10.0;
+    if remainder != 0.0 {
+        GivenOption::Some(remainder)
+    } else {
+        GivenOption::None
+    }
+}
+
+fn remainder_zero_built_in(num_check: f32) -> Option<f32> {
+    let remainder: f32 = num_check % 10.0;
+    if remainder != 0.0 {
+        Some(remainder)
+    } else {
+        None
+    }
+}
+
+#[derive(Debug)]
+enum GivenOption<T> {
+    None,
+    Some(T),
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -41,5 +73,8 @@ mod tests {
 
         let is_under_five: GivenResult<String, String> = check_under_five(5);
         dbg!(is_under_five);
+
+        let remainder = remainder_zero(12.2);
+        dbg!(remainder);
     }
 }
