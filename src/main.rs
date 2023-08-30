@@ -1,4 +1,5 @@
 mod m1_enums;
+mod m2_structs;
 
 fn main() {
     // println!("Welcome to this course on {}!@@", OUR_COURSE);
