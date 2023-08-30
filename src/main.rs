@@ -1,4 +1,4 @@
-const OUR_COURSE: &str = "Rust with AutoGPT";
+mod m1_enums;
 
 fn main() {
     // println!("Welcome to this course on {}!@@", OUR_COURSE);
